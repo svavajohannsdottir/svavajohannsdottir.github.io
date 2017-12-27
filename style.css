@@ -23,7 +23,6 @@ p {
 a {
 	text-decoration: none;
 	color: #4d4d4d;
-
 }
 
 
@@ -45,6 +44,16 @@ img {
 .swimming img {
 	margin: 0px;
 	width: 45vw;
+}
+
+.svava {
+	margin: 0 auto;
+    text-align: center;
+}
+
+.svava img {
+	margin: 0px;
+	width: 5vw;
 }
 
 @media all and (min-width: 600px) {
