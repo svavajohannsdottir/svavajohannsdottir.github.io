@@ -15,8 +15,8 @@ p {
 	margin-top: 17%;
 	margin-bottom: 17%;
 	text-align: center;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 
@@ -30,30 +30,10 @@ p:hover {
 	font-style: italic;
 }
 
+
 img {
 	margin: 0px;
 	width: 90vw;
-}
-
-.swimming {
-	margin: 0 auto;
-    text-align: center;
-	width: 100vw;
-}
-
-.swimming img {
-	margin: 0px;
-	width: 45vw;
-}
-
-.svava {
-	margin: 0 auto;
-    text-align: center;
-}
-
-.svava img {
-	margin: 0px;
-	width: 5vw;
 }
 
 @media all and (min-width: 600px) {
@@ -61,25 +41,6 @@ img {
         width: 600px;
 	 }
 	
-	.swimming {
-		 width: 600px;
-	 }
-	 .swimming img {
-		margin: 0px;
-		width: 250px;
-	 }	
-
-}
-
-@media all and (min-width: 1270px) {
-	 .swimming {
-		 width: 1270px;
-	 }
-	 .swimming img {
-		margin: 0px;
-		width: 250px;
-	 }
-	 
 }
 
 
