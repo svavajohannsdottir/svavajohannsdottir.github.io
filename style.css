@@ -1,6 +1,7 @@
 body {
 	margin: 0px;
-	margin-top: 10%;
+	margin-top: 20%;
+	margin-bottom: 0px;
 	color: #4d4d4d;
 	line-height: 30px;
 	background-color: f7f7f7;
@@ -11,11 +12,11 @@ body {
 p {
 	font-family: 'Times New Roman', serif;
 	margin: 0px;
-	margin-top: 17%;
-	margin-bottom: 17%;
 	text-align: center;
 	margin-left: 5%;
 	margin-right: 5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }
 
 
@@ -25,15 +26,24 @@ a {
 }
 
 
-p:hover {
+a:hover {
 	font-style: italic;
 }
 
+.effects {
+	text-align: left;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	margin-top: 20%;
+}
 
 img {
-	margin: 0px;
-	width: 90vw;
-	
+	width: 80%;
+}
+
+.link {
+	margin-top: 12%;
+    width: 15px;
 }
 
 iframe {
@@ -42,4 +52,3 @@ iframe {
 	height: 50.1vw;
 	border-width: 0px;
 }
-
