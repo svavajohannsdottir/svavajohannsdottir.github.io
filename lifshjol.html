@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test</title>
+		
+		</head>
+	<body align="center">
+		<canvas id="myCanvas" width="700" height="700" style="border:0px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<script>			
+			
+			var markmid = prompt("Skráðu markmiða", "");
+			var m = new Array(100);
+			var i = 0;
+
+			while (markmid != "") {
+				m[i] = markmid;
+				var writeout = "";
+				for (j=0; j<i+1; j++) {
+					writeout = writeout + m[j] + ". ";
+				}				
+				var markmid = prompt(writeout + "Skráðu næstu tegund markmiða", "");
+				i++;
+			}
+			
+			var total = i;
+			var r = new Array(total);
+			var writeout = "";
+			for (i=0;i<total;i++) {
+				var einkunn = prompt(writeout + "Skráðu einkunn fyrir " + m[i] + " (á skalanum 0 til 10)", "");
+				if (einkunn > 10) {
+					einkunn = 10;
+				}
+				else if (einkunn < 0) {
+					einkunn = 0;
+				}
+				r[i] = einkunn;
+				
+				writeout = writeout + m[i] + ": " + r[i] + ". ";
+			}
+
+			
+			var cent = 350;
+			var max_r = 250
+			var c=document.getElementById("myCanvas");
+			var ctx=c.getContext("2d");
+			//ctx.beginPath();
+			//ctx.arc(cent,cent,max_r+10,0,2*Math.PI);
+			//ctx.stroke();
+			
+			for (i=0; i<total; i++) {
+			
+				ctx.beginPath();
+				ctx.arc(cent,cent,(r[i]/10)*max_r,  2*Math.PI*(i/total),   2*Math.PI*((i+1)/total));
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(cent, cent);
+				ctx.lineTo(cent + (r[i]/10)*max_r*Math.cos(2*(i/total)*Math.PI), cent + (r[i]/10)*max_r*Math.sin(2*(i/total)*Math.PI) );
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(cent, cent);
+				ctx.lineTo(cent + (r[i]/10)*max_r*Math.cos(2*((i+1)/total)*Math.PI), cent + (r[i]/10)*max_r*Math.sin(2*((i+1)/total)*Math.PI) );
+				ctx.stroke();
+			}
+			
+			var push = 100;
+			for (i=0; i<total; i++) {
+				ctx.font = "20pt Garamond bold";
+				ctx.fillStyle = "#42bc85";
+				ctx.fillText(m[i] + ": " + r[i],
+				(cent + (r[i]/10)*(max_r)*Math.cos(2*(i/total)*Math.PI) + cent + (r[i]/10)*(max_r)*Math.cos(2*((i+1)/total)*Math.PI))/2 - 60,
+				(cent + (r[i]/10)*(max_r)*Math.sin(2*(i/total)*Math.PI) + cent + (r[i]/10)*(max_r)*Math.sin(2*((i+1)/total)*Math.PI))/2
+				);
+			}
+				
+			
+			
+		</script>
+	</body>
+</html>
